@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/Jovit-Mathew236/My-Personal-Web/blob/main/Logo2.png?raw=true" />
+    <link rel="stylesheet" href="style.css">
+    <title>CAD BATTLE | ASTHRA</title>
+</head>
+
+<body>
+    <div class='star'>
+        <div class='head-box'>
+            <div class='head'>
+                <h1> CAD MANIA</h1>
+                <p>
+                    A novel chance to indulge your imaginative thoughts and creative mind on CAD
+                    and a wonderful stage to feature the artist and designer in you.
+
+                    <br> <br>
+                    <b> Prize Pool: 1st :₹3000 <br>
+                        2nd :₹2000 </b>
+                </p>
+            </div>
+        </div>
+        <div class='form'>
+            <div>
+                <form name="google-sheet" method="post" autocomplete="off">
+                    <div class='form-inp-field'>
+                        <div class='form-field'>
+
+                            <label>Name</label><br><br>
+                            <input type="text" name="Name" placeholder='Name' required><br><br>
+                            <label>Phone</label><br><br>
+                            <input type="number" name="Phone" placeholder='Phone Number' required><br>
+                        </div>
+                        <div class='form-field'>
+                            <label>Email</label><br><br>
+                            <input type="email" name="Email" placeholder='yourname@gamil.com' required><br><br>
+                            <label>Department</label><br><br>
+                            <input type="text" name="Deapartment" placeholder='Department' required><br> <br>
+                            <label>College</label><br><br>
+                            <input type="text" name="College" placeholder='College name' required><br>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="submit" id="submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwPYhFTvwPcq7O_4x5b2ic3r188Nttc7VUFF7B6gUZ7gscVBOfX4vrZ0pdRlWSTijxxUQ/exec'
+        const form = document.forms['google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("You have successfully submitted."))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
